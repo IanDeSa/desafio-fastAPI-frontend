@@ -1,0 +1,68 @@
+<form (ngSubmit)="submit()" [formGroup]="productForm" #formDir="ngForm">
+  <div class="form-group">
+    <label for="name-input-id">Digite o nome do produto: *</label>
+    <input
+      type="text"
+      name="name-input"
+      id="name-input-id"
+      placeholder="Nome do produto"
+      formControlName="name"
+      required
+    >
+  </div>
+  <div *ngIf="name.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="name.errors?.['required']">O nome é obrigatório</p>
+    <p *ngIf="name.errors?.['maxlength']">O tamanho máximo são 128 caracteres</p>
+  </div>
+  <div class="form-group">
+    <label for="category-select-id">Selecione a categoria: *</label>
+    <select
+      name="category-select"
+      id="category-select-id"
+      formControlName="category_id"
+      required
+    >
+      <option
+        *ngFor="let category of categories"
+        value={{category.id}}
+      >
+      {{category.name}}
+    </option>
+    </select>
+  </div>
+  <div *ngIf="category_id.invalid && formDir.submitted" class="validation-error">
+    <p>A categoria é obrigatória</p>
+  </div>
+  <div class="form-group">
+    <label for="price-input-id">Informe o preço: *</label>
+    <input
+      type="number"
+      min="0"
+      name="price-input"
+      id="price-input-id"
+      placeholder="Preço do produto"
+      formControlName="price"
+      required
+    >
+  </div>
+  <div *ngIf="price.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="price.errors?.['required']">O preço é obrigatório</p>
+    <p *ngIf="price.errors?.['min']">O preço mínimo é R$00.00</p>
+  </div>
+  <div class="form-group">
+    <label for="name-input-id">Informe o número de serie: *</label>
+    <input
+      type="number"
+      min="0" name="name-input"
+      id="name-input-id"
+      placeholder="N° de serie do produto"
+      formControlName="serie"
+      required
+    >
+  </div>
+  <div *ngIf="serie.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="serie.errors?.['required']">O número de serie é obrigatório</p>
+    <p *ngIf="serie.errors?.['min']">O número de serie tem que ser positivo</p>
+  </div>
+  <input type="submit" value={{btnText}}>
+</form>
