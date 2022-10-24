@@ -1,0 +1,14 @@
+table {
+  border-spacing: .5em;
+  font-size: 1em;
+  border: 1px solid #777;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.container-table {
+  margin: 0 1em 0 1em;
+}
