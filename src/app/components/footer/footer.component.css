@@ -1,0 +1,17 @@
+footer {
+  border-top: 1px solid #777;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  color: #5A189A;
+}
+
+footer h3 {
+  margin-bottom: 1em;
+}
+
+footer span {
+  font-weight: bold;
+}
