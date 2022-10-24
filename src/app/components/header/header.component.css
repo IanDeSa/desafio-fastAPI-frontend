@@ -1,0 +1,26 @@
+img {
+  width: 3rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: .5em;
+  border-bottom: 1px solid #777;
+}
+
+h4 {
+  margin-left: .5em;
+}
+
+.brand,
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links li {
+  margin-right: 1em;
+  list-style: none;
+}
