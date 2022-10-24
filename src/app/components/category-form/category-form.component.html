@@ -1,0 +1,18 @@
+<form (ngSubmit)="submit()" [formGroup]="categoryForm" #formDir="ngForm">
+  <div class="form-group">
+    <label for="name-input-id">Digite o nome da categoria: *</label>
+    <input
+      type="text"
+      name="name-input"
+      id="name-input-id"
+      placeholder="Nome da categoria"
+      formControlName="name"
+      required
+    >
+  </div>
+  <div *ngIf="name.invalid && formDir.submitted" class="validation-error">
+    <p *ngIf="name.errors?.['required']">O nome é obrigatório</p>
+    <p *ngIf="name.errors?.['maxlength']">O tamanho máximo são 60 caracteres</p>
+  </div>
+  <input type="submit" value={{btnText}}>
+</form>
